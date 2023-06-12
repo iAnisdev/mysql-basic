@@ -1,9 +1,9 @@
 -- RUN database.sql queries before
 
 CREATE TABLE IF NOT EXISTS users (
-employeeId INT,
-firstName VARCHAR(25),
-lastName VARCHAR(25),
+employeeId INT UNIQUE,
+firstName VARCHAR(25) NOT NULL,
+lastName VARCHAR(25) NOT NULL,
 payRate DECIMAL(6, 2),
 hiredDate DATE,
 isCurrentlyEmployed BOOLEAN,
@@ -19,14 +19,14 @@ ALTER TABLE employees
 ADD email varchar(30);
 
 ALTER TABLE employees
-ADD phone_number varchar(15);
+ADD phone_number varchar(15) UNIQUE NOT NULL;
 
 
 ALTER TABLE employees
 RENAME COLUMN phone_number TO phoneNumber;
 
 ALTER TABLE employees
-MODIFY COLUMN email varchar(25);
+MODIFY COLUMN email VARCHAR(25) UNIQUE NOT NULL;
 
 
 ALTER TABLE employees
