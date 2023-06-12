@@ -1,7 +1,7 @@
 -- RUN database.sql queries before
 
 CREATE TABLE IF NOT EXISTS users (
-employeeId INT UNIQUE,
+employeeId INT,
 firstName VARCHAR(25) NOT NULL,
 lastName VARCHAR(25) NOT NULL,
 payRate DECIMAL(6, 2),
@@ -39,3 +39,7 @@ FIRST;
 
 ALTER TABLE employees
 DROP COLUMN idx;
+
+ALTER TABLE employees
+ADD CONSTRAINT 
+PRIMARY KEY(employeeId)
