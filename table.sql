@@ -6,8 +6,8 @@ firstName VARCHAR(25) NOT NULL,
 lastName VARCHAR(25) NOT NULL,
 payRate DECIMAL(6, 2),
 hiredDate DATE,
-isCurrentlyEmployed BOOLEAN,
-lastLogin DATETIME
+isCurrentlyEmployed BOOLEAN DEFAULT true,
+lastLogin DATETIME DEFAULT CURRENT_TIMESTAMP()
 );
 
 -- DROP TABLE users;
